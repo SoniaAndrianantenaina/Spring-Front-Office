@@ -2,7 +2,9 @@ package springapp;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class SpringAppApplication {
+	@Autowired
+	ClientMongoRepository crud_client;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAppApplication.class, args);
@@ -25,6 +29,11 @@ public class SpringAppApplication {
 		return String.format("Hello %s!", name);
 	}
 
+	@GetMapping("/listeClientMongo")
+	@CrossOrigin
+	public List<ClientMongo> findAllClientMongo()throws Exception{
+		return crud_client.findAll();
+	}
 	@PostMapping("/login")
 	@CrossOrigin
 	public int Login(String email, String mdp) throws SQLException {
