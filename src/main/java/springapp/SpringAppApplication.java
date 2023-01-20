@@ -1,6 +1,7 @@
 package springapp;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -47,6 +48,23 @@ public class SpringAppApplication {
 	public int Inscrisption(@RequestBody Client c) throws Exception{
  
 		return c.Inscrisption();
+	}
+	@GetMapping("/mesencheres")
+	@CrossOrigin
+	public ArrayList<Client> mesenchere(int idClient) throws Exception{
+		Client cl = new Client();
+		cl.setIdClient(idClient);
+		ArrayList<Client> c= cl.listeEnchereencheri(idClient);
+		return c; 
+	}
+
+	@PostMapping("/rencherir")
+	@CrossOrigin
+	public Integer rencherir(int idClient,int idProduit) throws Exception{
+		Client c = new Client();
+		c.setIdProduit(idProduit);
+		c.setIdClient(idClient);
+		return Client.rencherir();
 	}
 
 }
