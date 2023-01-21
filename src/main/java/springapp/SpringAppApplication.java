@@ -36,7 +36,7 @@ public class SpringAppApplication {
 
 	@PostMapping("/updateDemande")
 	@CrossOrigin
-	public int RechargerCompte (int idClient) throws Exception{
+	public int RechargerCompte (Integer idClient) throws Exception{
 		Client cl = new Client();
 		cl.setIdClient(idClient);
 		return cl.RechargerCompte(idClient);
@@ -51,7 +51,7 @@ public class SpringAppApplication {
 
 	@PostMapping("/mesencheres")
 	@CrossOrigin
-	public ArrayList<Client> mesenchere(int idClient) throws Exception{
+	public ArrayList<Client> mesenchere(Integer idClient) throws Exception{
 		Client cl = new Client();
 		cl.setIdClient(idClient);
 		ArrayList<Client> c= cl.listeEnchereencheri(idClient);
