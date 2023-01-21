@@ -280,7 +280,7 @@ public class Client {
                 c.setDatet(rs.getDate("datet"));
                 c.setOffre(rs.getFloat("offre"));
                 c.setIdProduit(rs.getInt("idProduit"));
-                c.setNomProduit(rs.getString("nom"));
+                c.setNomProduit(rs.getString("nomtypep"));
                 result.add(c);
             }
         } catch (Exception e) {
