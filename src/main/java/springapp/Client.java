@@ -293,21 +293,20 @@ public class Client {
         return result;
     }
 
-    public static Integer rencherir() throws Exception {
+    public Integer rencherir() throws Exception {
         Connection con = null;
         PreparedStatement ps = null;
         Integer result = null;
         try {
-            Client c = new Client();
-            if (c.getOffre() <= c.getoffreMax(c.getIdProduit()))
+            if (this.getOffre() <= this.getoffreMax())
                 throw new Exception("Offre trop basse");
             con = DBAConnection.connect();
             ps = con.prepareStatement(
-                    "insert into enchereproduit(idclient,idproduit,offre, date, statut) values(?,?,?,?,?)");
-            ps.setInt(1, c.getIdClient());
-            ps.setInt(2, c.getIdProduit());
-            ps.setFloat(3, c.getOffre());
-            ps.setDate(4, c.getDatet());
+                    "insert into enchereproduit(idclient,idproduit,offre, datet, statut) values(?,?,?,?,0)");
+            ps.setInt(1, this.getIdClient());
+            ps.setInt(2, this.getIdProduit());
+            ps.setFloat(3, this.getOffre());
+            ps.setDate(4, this.getDatet());
 
             result = ps.executeUpdate();
         } catch (Exception ex) {
@@ -317,7 +316,7 @@ public class Client {
         return result;
     }
 
-    public Integer getoffreMax(Integer idProduit) {
+    public Integer getoffreMax() {
         Connection con = null;
         PreparedStatement ps = null;
         Integer result = null;
@@ -325,9 +324,8 @@ public class Client {
         try {
             Client c = new Client();
             con = DBAConnection.connect();
-            ps = con.prepareStatement("select prixmax from v_maxoffre ");
-
-            ps.setFloat(1, offre);
+            ps = con.prepareStatement("select prixmax from v_maxoffre where idProduit = ?");
+            ps.setInt(1,this.idProduit);
             rs = ps.executeQuery();
             while (rs.next()) {
                 result = rs.getInt("prixmax");

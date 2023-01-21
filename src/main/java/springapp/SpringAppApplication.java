@@ -66,7 +66,7 @@ public class SpringAppApplication {
 		c.setIdProduit(idProduit);
 		c.setIdClient(idClient);
 		c.setOffre(offre);
-		return Client.rencherir();
+		return c.rencherir();
 	}
 
 	@GetMapping("/encherescours")
