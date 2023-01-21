@@ -299,8 +299,8 @@ public class Client {
         Integer result = null;
         try {
             Client c = new Client();
-            // if (c.getOffre() <= c.getoffreMax(c.getIdProduit()))
-            //     throw new Exception("Offre trop basse");
+            if (c.getOffre() <= c.getoffreMax(c.getIdProduit()))
+                throw new Exception("Offre trop basse");
             con = DBAConnection.connect();
             ps = con.prepareStatement(
                     "insert into enchereproduit(idclient,idproduit,offre, date, statut) values(?,?,?,?,?)");
@@ -312,9 +312,7 @@ public class Client {
             result = ps.executeUpdate();
         } catch (Exception ex) {
             throw ex;
-        } finally {
-            con.close();
-        }
+        } 
 
         return result;
     }
