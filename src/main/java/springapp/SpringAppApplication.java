@@ -48,7 +48,8 @@ public class SpringAppApplication {
 	public int Inscrisption(@RequestBody Client c) throws Exception{
 		return c.Inscrisption();
 	}
-	@GetMapping("/mesencheres")
+
+	@PostMapping("/mesencheres")
 	@CrossOrigin
 	public ArrayList<Client> mesenchere(int idClient) throws Exception{
 		Client cl = new Client();
@@ -59,7 +60,7 @@ public class SpringAppApplication {
 
 	@PostMapping("/rencherir")
 	@CrossOrigin
-	public Integer rencherir(int idClient,int idProduit) throws Exception{
+	public Integer rencherir(Integer idClient,Integer idProduit) throws Exception{
 		Client c = new Client();
 		c.setIdProduit(idProduit);
 		c.setIdClient(idClient);
@@ -74,7 +75,7 @@ public class SpringAppApplication {
 
 	@PostMapping("/listesmesencheres")
 	@CrossOrigin
-	public ArrayList<Produit> getListesMesEncheres(int idProprio) throws Exception {
+	public ArrayList<Produit> getListesMesEncheres(Integer idProprio) throws Exception {
 		Produit p = new Produit();
 		ArrayList<Produit> liste = p.getListMyEncheres(idProprio);
 		return liste;
