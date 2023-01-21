@@ -45,7 +45,8 @@ public class SpringAppApplication {
 
 	@PostMapping("/inscription")
 	@CrossOrigin
-	public int Inscrisption(@RequestBody Client c) throws Exception{
+	public int Inscrisption(String nom, String prenom, String mdp, String email, float budget) throws Exception{
+		Client c = new Client(null, nom, prenom, mdp, email, budget, budget, 0, 0, null);
 		return c.Inscrisption();
 	}
 
