@@ -60,10 +60,11 @@ public class SpringAppApplication {
 
 	@PostMapping("/rencherir")
 	@CrossOrigin
-	public Integer rencherir(Integer idClient,Integer idProduit) throws Exception{
+	public Integer rencherir(Integer idClient,Integer idProduit, float offre) throws Exception{
 		Client c = new Client();
 		c.setIdProduit(idProduit);
 		c.setIdClient(idClient);
+		c.setOffre(offre);
 		return Client.rencherir();
 	}
 
