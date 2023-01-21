@@ -32,3 +32,6 @@ select id, idtypeproduit, descriptions , prixminimum, idproprietaire,
 		when statut = 1 then 'Vendu'
 	end
 from produit;
+
+create view v_maxoffre as 
+select  idproduit , max(offre) prixmax from enchereproduit e group by idproduit ;
