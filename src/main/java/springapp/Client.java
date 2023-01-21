@@ -293,7 +293,7 @@ public class Client {
         return result;
     }
 
-    public Integer rencherir() throws Exception {
+    public Integer rencherir() throws Exception{
         Connection con = null;
         PreparedStatement ps = null;
         Integer result = null;
