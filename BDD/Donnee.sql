@@ -57,30 +57,29 @@ INSERT INTO public.typeproduit
 VALUES( 'Appartement', 4);
 
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 1, 'Marque hp , core i5 11eme  , Ram 8 g ,hdd 128 gb ,windows 11', '//', 2000000.0, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 1, 'Marque hp , core i5 11eme  , Ram 8 g ,hdd 128 gb ,windows 11', '//', 2000000.0, 0,1);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 2, 'bluetooth , avec dongle , peut se connecter avec un telephone', '//', 100000.0, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 2, 'bluetooth , avec dongle , peut se connecter avec un telephone', '//', 100000.0, 0,1);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 3, 'Rolls Royce Phantom 2019  , bonne occasion , 250 chv, moteur electrique ', '//', 90000000000, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 3, 'Rolls Royce Phantom 2019  , bonne occasion , 250 chv, moteur electrique ', '//', 90000000000, 0,2);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 4, 'Volvo , Camion de transport , Max 50 tonnes , 200 chv', '//', 20000000000, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 4, 'Volvo , Camion de transport , Max 50 tonnes , 200 chv', '//', 20000000000, 0,3);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 5, 'JCB,120chv,Tacteur agricole', '//', 5000000000, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 5, 'JCB,120chv,Tacteur agricole', '//', 5000000000, 0,4);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 6, 'CLC , 120 V ,2000 Wh, Tres bonne qualite', '//', 1000000.0, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 6, 'CLC , 120 V ,2000 Wh, Tres bonne qualite', '//', 1000000.0, 0,4);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 7, 'Villa Basse , Premiere plan , Avec piscine , 1sallon ,5 chambre , 1 cuisine', '//', 50000000, 0);
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 7, 'Villa Basse , Premiere plan , Avec piscine , 1sallon ,5 chambre , 1 cuisine', '//', 50000000, 0,5);
 INSERT INTO public.produit
-( idtypeproduit, descriptions, image, prixminimum, statut)
-VALUES( 8, 'Appartement dans un batiment, 4 chambres ,1salle de bain,1cuisine,1 toilette', '//', 20000000, 0);
-
+( idtypeproduit, descriptions, image, prixminimum, statut, idProprietaire)
+VALUES( 8, 'Appartement dans un batiment, 4 chambres ,1salle de bain,1cuisine,1 toilette', '//', 20000000, 0,5);
 
 INSERT INTO public.enchereproduit
 (idclient, idproduit, offre, datet, statut)
