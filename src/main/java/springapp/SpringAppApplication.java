@@ -39,7 +39,7 @@ public class SpringAppApplication {
 	public int RechargerCompte (int idClient) throws Exception{
 		Client cl = new Client();
 		cl.setIdClient(idClient);
-		return cl.RechargerCompte();
+		return cl.RechargerCompte(idClient);
 
 	}
 

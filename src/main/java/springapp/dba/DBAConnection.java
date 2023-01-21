@@ -9,7 +9,7 @@ public class DBAConnection {
         Class.forName("org.postgresql.Driver");
         Connection connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/encheres", "tp","tp");
+            connection = DriverManager.getConnection("jdbc:postgresql://mahmud.db.elephantsql.com/auuqrlnq", "auuqrlnq","MWszlqgM69PJvMPH_3WeQUqb9yH_3kWj");
                     // System.out.println("connecte");
         } catch (Exception e) {
             throw e;
